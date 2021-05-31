@@ -6,15 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style> 
-        .form-input{ width:100%; display:inline-block; }
-        .form-input input[type="text"], .form-input input[type="password"]{ width:100%; height:50px; line-height:50px; padding:0 15px; display:inline-block; border:none; border-radius:0; border:1px solid #ddd; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
-        .form-input input:read-only, .form-input input:disabled{ background-color:#eee; color:#999; }
-    </style>
+    .form-input{ width:100%; display:inline-block; }
+.form-input input[type="text"], .form-input input[type="password"]{ width:100%; height:50px; line-height:50px; padding:0 15px; display:inline-block; border:none; border-radius:0; border:1px solid #ddd; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+.form-input input:read-only, .form-input input:disabled{ background-color:#eee; color:#999; }
+</style>
 </head>
 <body>
     <input type="text" class="input-text" value="disabled readonly" disabled>
     <input type="text" name="authHp2" id="authHp2" value="010" disabled title="휴대폰번호 첫번째 세자리">
-    <input name="authHp1" id="authHp1" value="010" class="readonly" disabled="disabled" title="휴대폰번호 첫번째 세자리">
 
     <div class="form-table form-table2">
         <table>
@@ -88,17 +87,17 @@
                     <th>인증 휴대폰 번호</th>
                     <td class="pr0">
                         <div class="form-input">
-                            <input name="authHp1" id="authHp1" value="010" class="readonly" disabled="disabled" title="휴대폰번호 첫번째 세자리">
+                            <input type="text" name="authHp1" id="authHp1" value="010" disabled="disabled" title="휴대폰번호 첫번째 세자리">
                         </div>
                     </td>
                     <td class="pr0">
                         <div class="form-input">
-                            <input name="authHp2" id="authHp2" value="1234" class="readonly" disabled="disabled" maxlength="4" title="휴대폰번호 가운데 네자리">
+                            <input type="text" name="authHp2" id="authHp2" value="1234" disabled="disabled" maxlength="4" title="휴대폰번호 가운데 네자리">
                         </div>
                     </td>
                     <td> 
                         <div class="form-input">
-                            <input name="authHp3" id="authHp3" value="5678" class="readonly" disabled="disabled" maxlength="4" title="휴대폰번호 끝 네자리">
+                            <input type="text" name="authHp3" id="authHp3" value="5678" disabled="disabled" maxlength="4" title="휴대폰번호 끝 네자리">
                         </div>
                     </td>
                 </tr>
