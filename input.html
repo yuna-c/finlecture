@@ -5,9 +5,121 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style> 
+        .form-input{ width:100%; display:inline-block; }
+        .form-input input[type="text"], .form-input input[type="password"]{ width:100%; height:50px; line-height:50px; padding:0 15px; display:inline-block; border:none; border-radius:0; border:1px solid #ddd; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+        .form-input input:read-only, .form-input input:disabled{ background-color:#eee; color:#999; }
+    </style>
 </head>
 <body>
     <input type="text" class="input-text" value="disabled readonly" disabled>
     <input type="text" name="authHp2" id="authHp2" value="010" disabled title="휴대폰번호 첫번째 세자리">
+    <input name="authHp1" id="authHp1" value="010" class="readonly" disabled="disabled" title="휴대폰번호 첫번째 세자리">
+
+    <div class="form-table form-table2">
+        <table>
+            <colgroup>
+                <col style="width:auto;">
+                <col style="width:auto;">
+                <col style="width:auto;">
+                <col style="width:auto;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>학생 이름*</th>
+                    <td colspan="3"><input type="text" id="authStNm" name="authStNm" class="input-text" maxlength="15"></td>
+                </tr>
+                <tr>
+                    <th>학생 연락처*</th>
+                    <td class="pr0">
+                        <select name="authStHp1" id="authStHp1" class="select" title="휴대폰번호 앞 세자리">
+                            <option value="010">010</option>
+                            <option value="011">011</option>
+                            <option value="017">017</option>
+                            <option value="018">018</option>
+                            <option value="019">019</option>
+                        </select>
+                    </td>
+                    <td class="pr0">
+                        <input type="text" name="authStHp2" id="authStHp2" class="input-text onlyNumber" maxlength="4" title="휴대폰번호 가운데 네자리">
+                    </td>
+                    <td>
+                        <input type="text" name="authStHp3" id="authStHp3" class="input-text onlyNumber" maxlength="4" title="휴대폰번호 뒤 네자리">
+                    </td>
+                </tr>
+                <tr>
+                    <th>학부모 이름*</th>
+                    <td colspan="3"><input type="text" id="authNm" name="authNm" class="input-text" maxlength="15"></td>
+                </tr>
+                <tr>
+                    <th>학부모 연락처*</th>
+                    <td class="pr0">
+                        <select name="authHp1" id="authHp1" class="select" title="휴대폰번호 앞 세자리">
+                            <option value="010">010</option>
+                            <option value="011">011</option>
+                            <option value="017">017</option>
+                            <option value="018">018</option>
+                            <option value="019">019</option>
+                        </select>
+                    </td>
+                    <td class="pr0">
+                        <input type="text" name="authHp2" id="authHp2" class="input-text onlyNumber" maxlength="4" title="휴대폰번호 가운데 네자리">
+                    </td>
+                    <td>
+                        <input type="text" name="authHp3" id="authHp3" class="input-text onlyNumber" maxlength="4" title="휴대폰번호 뒤 네자리">
+                    </td>
+                </tr>
+                <tr>
+                    <th>인증 대상</th>
+                    <td colspan="3" class="txt-left">
+                        <label class="form-radio">
+                            <input type="radio">
+                            <span class="ico ico-radio"></span>
+                            학생 연락처
+                        </label>
+                        <label class="form-radio">
+                            <input type="radio">
+                            <span class="ico ico-radio"></span>
+                            학부모 연락처
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>인증 휴대폰 번호</th>
+                    <td class="pr0">
+                        <div class="form-input">
+                            <input name="authHp1" id="authHp1" value="010" class="readonly" disabled="disabled" title="휴대폰번호 첫번째 세자리">
+                        </div>
+                    </td>
+                    <td class="pr0">
+                        <div class="form-input">
+                            <input name="authHp2" id="authHp2" value="1234" class="readonly" disabled="disabled" maxlength="4" title="휴대폰번호 가운데 네자리">
+                        </div>
+                    </td>
+                    <td> 
+                        <div class="form-input">
+                            <input name="authHp3" id="authHp3" value="5678" class="readonly" disabled="disabled" maxlength="4" title="휴대폰번호 끝 네자리">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th rowspan="2">인증 번호*</th>
+                    <td colspan="2" class="border-none pr0">
+                        <div class="cert-form">
+                            <input type="text" class="input-text onlyNumber" id="authNumber" name="authNumber" maxlength="6" placeholder="인증번호">
+                            <span class="cert-txt" id="authTimer">3:00</span>
+                        </div>
+                    </td>
+                    <td class="border-none">
+                        <a href="javascript:void(0)" id="ipa" class="bt"></a>
+                        <input type="button" id="ipa" class="btn btn-black" onclick="IfPhoneAuth();" value="인증번호 받기">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="txt-info"><p class="txt txt-left">※ 선택된 휴대폰 번호로 인증번호가 발송됩니다.</p></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>  
 </body>
 </html>
